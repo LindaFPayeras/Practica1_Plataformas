@@ -3,12 +3,14 @@ using UnityEngine;
 public class FallingPlatform : MonoBehaviour
 {
     private Vector3 position0;
+    private Quaternion rotation0;
     Rigidbody rb;
     
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         position0 = transform.position;
+        rotation0 = transform.rotation;
     }
 
     void Update()
@@ -25,7 +27,7 @@ public class FallingPlatform : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Ground"))
         {
-            Invoke("gravityOff", 0.5f);
+            Invoke("Reset", 0.5f);
         }
     }
 
@@ -34,9 +36,12 @@ public class FallingPlatform : MonoBehaviour
         rb.useGravity = true;
     }
 
-    void gravityOff()
+    void Reset()
     {
         transform.position = position0;
         rb.useGravity = false;
+        rb.linearVelocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+        transform.rotation = rotation0;
     }
 }
