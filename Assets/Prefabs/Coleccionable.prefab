@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 388347283462072023}
   - component: {fileID: 5139320033136818521}
+  - component: {fileID: 4064916213805246812}
   m_Layer: 0
   m_Name: Coleccionable
   m_TagString: Untagged
@@ -54,6 +55,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.73897266, y: 0.8037949, z: 0.27483177}
   m_Center: {x: 0.13051367, y: -0.30436847, z: -0.28566456}
+--- !u!114 &4064916213805246812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4143534195191696673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adf096992eac3da449c65d10d6c1cad7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Coleccionable
 --- !u!1001 &883455916895009653
 PrefabInstance:
   m_ObjectHideFlags: 0
