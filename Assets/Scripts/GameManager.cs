@@ -12,10 +12,19 @@ public class GameManager : MonoBehaviour
     public int Coins => coins;
 
     public static event Action<int> OnCoinsChanged;
+    public static event Action<int> OnLivesChanged;
 
     void Awake()
     {
-        instance = this;
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }   
     }
 
     public void AddCoin()
@@ -30,5 +39,6 @@ public class GameManager : MonoBehaviour
     {
         lives--;
         Debug.Log("Vidas: " + lives);
+        OnLivesChanged?.Invoke(lives);
     }
 }

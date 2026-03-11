@@ -15,6 +15,7 @@ public class DamageSpace : MonoBehaviour
             {
                 GameManager.instance.LoseLife();
                 lastHitTime = Time.time;
+                Debug.Log("Player se ha dado con los pinchos");
             }
         }
     }
