@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -32,7 +33,11 @@ public class GameManager : MonoBehaviour
     {
         coins++;
         Debug.Log("Monedas: " + coins);
-
+        if (coins >= 3)
+        {
+            Debug.Log("¡Has ganado!");
+            SceneLoader.instance.GameOverWin();
+        }
         OnCoinsChanged?.Invoke(coins);
     }
 
@@ -49,16 +54,9 @@ public class GameManager : MonoBehaviour
         else
         {
             Debug.Log("Game Over");
-            ResetGame();
+            SceneLoader.instance.GameOverLose();
         }
     }
 
-    public void ResetGame()
-    {
-        coins = 0;
-        lives = 3;
-        Debug.Log("Juego reiniciado");
-        OnCoinsChanged?.Invoke(coins);
-        OnLivesChanged?.Invoke(lives);
-    }
+    
 }

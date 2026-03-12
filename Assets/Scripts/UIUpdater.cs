@@ -15,7 +15,7 @@ public class IU : MonoBehaviour
 
     private void UpdateCoins(int coins)
     {
-        coinText.text = "Coins: " + coins.ToString();
+        coinText.text = "Coins: " + coins.ToString() + "/3";
     }  
 
     void Start()
