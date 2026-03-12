@@ -68,4 +68,9 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = false;
         }
     }
+
+    void Respawn()
+    {
+        transform.position = new Vector3(0, 0, 0);
+    }
 }

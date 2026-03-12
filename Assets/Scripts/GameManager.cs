@@ -41,4 +41,13 @@ public class GameManager : MonoBehaviour
         Debug.Log("Vidas: " + lives);
         OnLivesChanged?.Invoke(lives);
     }
+
+    public void ResetGame()
+    {
+        coins = 0;
+        lives = 3;
+        Debug.Log("Juego reiniciado");
+        OnCoinsChanged?.Invoke(coins);
+        OnLivesChanged?.Invoke(lives);
+    }
 }
