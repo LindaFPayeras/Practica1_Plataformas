@@ -30,3 +30,26 @@ Una vez comprendida correctamente la relación entre ambos y ajustadas las refer
 Intenté implementar esta funcionalidad, pero no conseguí plantear correctamente la lógica para que la plataforma comenzara a caer al ser tocada por el jugador.
 
 ## Práctica 2
+### Arreglos de la Práctica 1
+He creado una plataforma que se cae y he arreglado los prefabs para que sean prefabs de verdad.
+
+### Coleccionables y enemigos
+
+Para hacer esto use monedas como coleccionables y pinchos en las plataformas que hacen que bajes de vidas. Tienen más o menos el mismo funcionamiento llamando a sumar o restar coleccionables o vidas. 
+
+### Modificaciones en el Player
+
+Se añade el respawn, pensé en hacer simplemente `transform.position = Vector3.zero` pero no me acabó convenciendo dado que no empezaba desde el 0 como tal, así que se quedó así que me parece más específico.
+
+### Escenas
+- Inicio
+- Juego
+- Victoria
+- GameOver
+
+GameOver y Victoria son bastante parecidas, con ligeros cambios y salen cuando se acaban las vidas o consigues 3 monedas respectivamente. 
+
+En vez de llegar a un sitio, tal como están puestas las plataformas en mi juego, conseguir 3 me parecía lo más coherente. 
+
+Para conseguirlo he tenido que hacer un arreglo un poco sucio, pero funcional. En la siguiente lo intentaré arreglar. 
+
