@@ -6,9 +6,10 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     
     private int lives = 3;
+    public int Lives => lives; 
 
-    int coins = 0;
-
+    private int coins;
+    
     public int Coins => coins;
 
     public static event Action<int> OnCoinsChanged;

@@ -1,29 +1,36 @@
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 
 public class IU : MonoBehaviour
 {
-    public TextMeshProUGUI coinText;
+    [SerializeField] private TextMeshProUGUI coinText;
+
+    [SerializeField] private TextMeshProUGUI livesText;
+
+    private void UpdateLives(int lives)
+    {
+        livesText.text = "Lives: " + lives.ToString();
+    }   
+
+    private void UpdateCoins(int coins)
+    {
+        coinText.text = "Coins: " + coins.ToString();
+    }  
 
     void Start()
     {
-        UpdateCoinText(GameManager.instance.Coins);
-
-        GameManager.OnCoinsChanged += UpdateCoinText;
+        UpdateCoins(GameManager.instance.Coins);
+        GameManager.OnCoinsChanged += UpdateCoins;
+        UpdateLives(GameManager.instance.Lives);
+        GameManager.OnLivesChanged += UpdateLives;
     }
 
-    void OnDestroy() 
-    /*
-        Control de errores: Si se destruye el objeto que tiene este script se destruye 
-        la susbscripción al evento OnCoinsChanged para evitar errores de referencia nula
-    */
-    
+    void OnDestroy()     
     {
-        GameManager.OnCoinsChanged -= UpdateCoinText;
+        GameManager.OnCoinsChanged -= UpdateCoins;
+        GameManager.OnLivesChanged -= UpdateLives;
     }
 
-    void UpdateCoinText(int coinAmount) 
-    {
-        coinText.text = "Coins: " + coinAmount;
-    }
+   
 }

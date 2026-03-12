@@ -12,8 +12,8 @@ public class DamageSpace : MonoBehaviour
         if (controllerScript != null)
         {
             if (Time.time >= lastHitTime + hitCooldown)
-            {
-                GameManager.instance.LoseLife();
+               {
+                GameManager.instance.LoseLife(controllerScript);
                 lastHitTime = Time.time;
                 Debug.Log("Player se ha dado con los pinchos");
             }
