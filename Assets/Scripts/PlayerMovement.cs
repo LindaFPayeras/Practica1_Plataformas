@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public bool isGrounded;
 
     public int jumps = 2;
+    private Vector3 spawnPoint;
 
     private Rigidbody rb;
     private Vector3 direction;
@@ -16,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        spawnPoint = transform.position;
     }
 
     void Update()
@@ -69,8 +71,11 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void Respawn()
+    public void Respawn()
     {
-        transform.position = new Vector3(0, 0, 0);
+        transform.position = spawnPoint;
+
+        rb.linearVelocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
     }
 }

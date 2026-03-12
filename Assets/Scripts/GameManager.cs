@@ -35,11 +35,21 @@ public class GameManager : MonoBehaviour
         OnCoinsChanged?.Invoke(coins);
     }
 
-    public void LoseLife()
+    public void LoseLife(PlayerMovement player)
     {
         lives--;
         Debug.Log("Vidas: " + lives);
         OnLivesChanged?.Invoke(lives);
+
+        if (lives > 0)
+        {
+            player.Respawn();
+        }
+        else
+        {
+            Debug.Log("Game Over");
+            ResetGame();
+        }
     }
 
     public void ResetGame()
