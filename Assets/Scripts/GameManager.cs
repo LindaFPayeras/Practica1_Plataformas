@@ -36,7 +36,8 @@ public class GameManager : MonoBehaviour
         if (coins >= 3)
         {
             Debug.Log("¡Has ganado!");
-            SceneLoader.instance.GameOverWin();
+            coins = 0;
+            
         }
         OnCoinsChanged?.Invoke(coins);
     }
@@ -54,7 +55,7 @@ public class GameManager : MonoBehaviour
         else
         {
             Debug.Log("Game Over");
-            SceneLoader.instance.GameOverLose();
+            lives = 3;
         }
     }
 
