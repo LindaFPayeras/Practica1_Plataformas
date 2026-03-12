@@ -2,16 +2,13 @@ using UnityEngine;
 
 public class Coleccionable : MonoBehaviour
 {
-    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void OnTriggerEnter(Collider collider)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (collider.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Algo ha tocado la moneda");
+            GameManager.instance.AddCoin(); // Para que el contador de monedas aumente al tocarla el jugador
+            Destroy(this.gameObject); // Para que desaparezca la moneda al tocarla el jugador
+        }
     }
 }
