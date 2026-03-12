@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     private int lives = 3;
     public int Lives => lives; 
 
-    private int coins;
+    private int coins ;
     
     public int Coins => coins;
 
@@ -36,10 +36,11 @@ public class GameManager : MonoBehaviour
         if (coins >= 3)
         {
             Debug.Log("¡Has ganado!");
+            OnCoinsChanged?.Invoke(coins);
             coins = 0;
-            
+
         }
-        OnCoinsChanged?.Invoke(coins);
+        
     }
 
     public void LoseLife(PlayerMovement player)

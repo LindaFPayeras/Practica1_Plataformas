@@ -1129,6 +1129,7 @@ GameObject:
   - component: {fileID: 615300107}
   - component: {fileID: 615300106}
   - component: {fileID: 615300110}
+  - component: {fileID: 615300111}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1234,6 +1235,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::IU
   coinText: {fileID: 2060139687}
   livesText: {fileID: 389089881}
+  sceneLoader: {fileID: 615300111}
+--- !u!114 &615300111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 615300105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b807808a6eddf42b0cf6da1f08180f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneLoader
 --- !u!1 &714353124
 GameObject:
   m_ObjectHideFlags: 0
